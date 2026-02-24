@@ -8,14 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================
+   QƏHVƏYİ TEMA RƏNGLƏRİ
+===================== */
 :root{
---blue:#0b2c5f;
---darkblue:#081f45;
---red:#c40000;
---light:#f4f6fa;
---gold:#c9a227;
+--brown-main:#5a3e2b;
+--brown-dark:#3e2a1f;
+--brown-accent:#8b3a2f;
+--gold:#c8a96a;
+--cream:#f5efe6;
+--white:#ffffff;
 }
 
+/* RESET */
 *{
 margin:0;
 padding:0;
@@ -24,115 +30,145 @@ font-family:'Montserrat',sans-serif;
 }
 
 body{
-background:var(--light);
-color:#222;
+background:var(--cream);
 }
 
-/* ===== HEADER ===== */
-
-.header-top{
-background:var(--blue);
+/* TOP BAR */
+.topbar{
+background:var(--brown-dark);
 color:white;
 text-align:center;
-padding:10px;
-font-size:14px;
+padding:8px;
+font-size:13px;
 letter-spacing:1px;
 }
 
-.main-header{
-background:white;
+/* HEADER */
+.header{
+background:var(--white);
 text-align:center;
 padding:30px 20px;
 border-bottom:4px solid var(--gold);
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-.main-header img{
-width:120px;
-margin-bottom:15px;
+.header img{
+width:90px;
+margin-bottom:10px;
 }
 
-.main-header h1{
-color:var(--blue);
-font-size:28px;
-font-weight:700;
+.header h1{
+color:var(--brown-main);
+font-size:24px;
 }
 
-.main-header h2{
-font-size:20px;
-font-weight:500;
+.header h2{
+font-size:17px;
 margin-top:5px;
+color:#444;
 }
 
-/* ===== NAVBAR ===== */
-
+/* NAVBAR */
 nav{
-background:var(--darkblue);
-text-align:center;
+background:var(--brown-main);
+display:flex;
+justify-content:center;
+gap:40px;
 padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:0 25px;
 font-weight:600;
+position:relative;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:var(--gold);
+left:0;
+bottom:-5px;
 transition:0.3s;
 }
 
-nav a:hover{
-color:var(--gold);
+nav a:hover::after{
+width:100%;
 }
 
-/* ===== HERO SECTION ===== */
-
+/* HERO SLIDER */
 .hero{
-background:linear-gradient(rgba(11,44,95,0.85),rgba(11,44,95,0.85)),url('header.jpg');
+position:relative;
+height:450px;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
 background-size:cover;
 background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 color:white;
 text-align:center;
-padding:80px 20px;
+transition:opacity 1s ease-in-out;
 }
 
-.hero h1{
-font-size:36px;
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(62,42,31,0.8);
+}
+
+.slide h1{
+font-size:34px;
 margin-bottom:15px;
+z-index:2;
 }
 
-.hero p{
+.slide p{
 font-size:18px;
-opacity:0.9;
+z-index:2;
 }
 
-/* ===== CONTENT ===== */
-
-.container{
+/* SECTION */
+.section{
 max-width:1200px;
 margin:auto;
-padding:70px 20px;
+padding:80px 20px;
 }
 
 .section-title{
 text-align:center;
 font-size:28px;
-color:var(--blue);
-margin-bottom:50px;
-position:relative;
+color:var(--brown-main);
+margin-bottom:60px;
 }
 
 .section-title::after{
 content:'';
-width:80px;
+width:90px;
 height:4px;
 background:var(--gold);
 display:block;
 margin:15px auto;
-border-radius:5px;
 }
 
+/* CARD */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:40px;
 }
 
@@ -140,18 +176,18 @@ gap:40px;
 background:white;
 border-radius:15px;
 overflow:hidden;
-box-shadow:0 15px 30px rgba(0,0,0,0.08);
-transition:0.4s;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+box-shadow:0 25px 50px rgba(0,0,0,0.15);
 }
 
 .card img{
 width:100%;
-height:260px;
+height:240px;
 object-fit:cover;
 }
 
@@ -160,20 +196,19 @@ padding:25px;
 }
 
 .card-body h3{
-color:var(--blue);
-margin-bottom:15px;
-font-size:20px;
+color:var(--brown-main);
+margin-bottom:10px;
 }
 
 .card-body p{
-margin-bottom:15px;
-line-height:1.6;
+line-height:1.7;
+margin-bottom:20px;
 }
 
 .btn{
 display:inline-block;
 padding:10px 20px;
-background:var(--red);
+background:var(--brown-accent);
 color:white;
 text-decoration:none;
 border-radius:8px;
@@ -181,57 +216,73 @@ transition:0.3s;
 }
 
 .btn:hover{
-background:#8f0000;
+background:#6e2e24;
 }
 
-/* ===== FOOTER ===== */
-
+/* FOOTER */
 footer{
-background:var(--darkblue);
+background:var(--brown-dark);
 color:white;
 text-align:center;
-padding:30px;
-margin-top:60px;
-font-size:14px;
+padding:25px;
+margin-top:50px;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
-.hero h1{
-font-size:26px;
+nav{
+flex-direction:column;
+gap:15px;
+}
+.slide h1{
+font-size:22px;
 }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="header-top">
+<div class="topbar">
 AZƏRBAYCAN RESPUBLİKASI TƏHSİL NAZİRLİYİ
 </div>
 
-<div class="main-header">
+<div class="header">
 <img src="logo.jpg">
 <h1>Gəncə şəhəri</h1>
 <h2>Nəriman Nərimanov adına 25 nömrəli tam orta məktəb</h2>
 </div>
 
 <nav>
-<a href="index.html">Ana səhifə</a>
+<a href="#">Ana səhifə</a>
 <a href="news.html">Xəbərlər</a>
 <a href="#">Əlaqə</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-<h1>Rəsmi Məktəb Saytı</h1>
-<p>Təhsil, intizam və uğur bizim əsas prinsiplərimizdir</p>
+
+<div class="slide" id="slide1" style="background-image:url('hero1.jpg');opacity:1;">
+<div class="overlay"></div>
+<h1>Rəsmi Məktəb Portalı</h1>
+<p>Təhsil • İntizam • Uğur</p>
 </div>
 
-<div class="container">
+<div class="slide" id="slide2" style="background-image:url('hero2.jpg');opacity:0;">
+<div class="overlay"></div>
+<h1>İdman Nailiyyətləri</h1>
+<p>Şagirdlərimiz uğur qazanır</p>
+</div>
 
-<h2 class="section-title">İdman Nailiyyətləri</h2>
+</div>
+
+<!-- SECTION -->
+<div class="section">
+
+<h2 class="section-title">Son Nailiyyət</h2>
 
 <div class="grid">
-
 <div class="card">
 <img src="elcan.jpg">
 <div class="card-body">
@@ -240,15 +291,28 @@ AZƏRBAYCAN RESPUBLİKASI TƏHSİL NAZİRLİYİ
 <a href="news.html" class="btn">Ətraflı</a>
 </div>
 </div>
-
 </div>
 
 </div>
 
 <footer>
-© 2026 Gəncə şəhəri N.Nərimanov adına 25 nömrəli tam orta məktəb  
-Bütün hüquqlar qorunur
+© 2026 25 nömrəli tam orta məktəb
 </footer>
+
+<script>
+let s1=document.getElementById("slide1");
+let s2=document.getElementById("slide2");
+
+setInterval(()=>{
+if(s1.style.opacity==1){
+s1.style.opacity=0;
+s2.style.opacity=1;
+}else{
+s1.style.opacity=1;
+s2.style.opacity=0;
+}
+},4000);
+</script>
 
 </body>
 </html>
