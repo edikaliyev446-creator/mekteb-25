@@ -1,294 +1,162 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>25 Nömrəli Tam Orta Məktəb</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gəncə şəhər 25 nömrəli tam orta məktəb</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background:#f5f5f5;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        header{
+            background:#003366;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
 
-body{
-scroll-behavior:smooth;
-transition:0.4s;
-}
+        header img{
+            width:120px;
+        }
 
-header{
-background:linear-gradient(135deg,#8b6f47,#b08d57);
-color:white;
-padding:40px 20px;
-text-align:center;
-position:relative;
-}
+        nav{
+            background:#990000;
+            text-align:center;
+            padding:15px;
+        }
 
-.logo{
-width:120px;
-margin-bottom:15px;
-animation:fadeIn 2s ease-in-out;
-}
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+        }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(-20px);}
-to{opacity:1; transform:translateY(0);}
-}
+        section{
+            padding:60px 20px;
+        }
 
-header h1{
-font-size:28px;
-}
+        .container{
+            max-width:1000px;
+            margin:auto;
+        }
 
-header p{
-font-size:18px;
-margin-top:10px;
-}
+        h2{
+            text-align:center;
+            color:#003366;
+            margin-bottom:30px;
+        }
 
-nav{
-background:#5a4328;
-padding:15px;
-position:sticky;
-top:0;
-z-index:1000;
-text-align:center;
-}
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom:40px;
+        }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:15px;
-font-weight:500;
-transition:0.3s;
-}
+        iframe{
+            width:100%;
+            height:450px;
+            border-radius:10px;
+            margin-top:20px;
+        }
 
-nav a:hover{
-color:yellow;
-}
-
-section{
-padding:70px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-h2{
-text-align:center;
-margin-bottom:40px;
-color:#5a4328;
-font-size:28px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-margin-bottom:20px;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.teachers{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.teacher{
-flex:1 1 30%;
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
-text-align:center;
-}
-
-.gallery{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.gallery img{
-width:32%;
-border-radius:15px;
-transition:0.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input, textarea{
-padding:12px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:16px;
-}
-
-button{
-background:#5a4328;
-color:white;
-padding:12px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-size:16px;
-transition:0.3s;
-}
-
-button:hover{
-background:#8b6f47;
-}
-
-footer{
-background:#5a4328;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:50px;
-}
-
-.dark{
-background:#121212;
-color:white;
-}
-
-.dark nav{
-background:black;
-}
-
-.dark .card,
-.dark .teacher{
-background:#1e1e1e;
-color:white;
-}
-
-.dark footer{
-background:black;
-}
-
-.toggle{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#5a4328;
-color:white;
-padding:15px;
-border-radius:50%;
-cursor:pointer;
-font-size:18px;
-}
-
-@media(max-width:768px){
-.teachers{
-flex-direction:column;
-}
-.gallery img{
-width:100%;
-}
-}
-</style>
+        footer{
+            background:#003366;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-<img src="logo.jpg" class="logo">
-<h1>Gəncə şəhəri Nəriman Nərimanov adına</h1>
-<h1>25 nömrəli tam orta məktəb</h1>
-<p>Rəsmi Məktəb Saytı</p>
+    <img src="logo.jpg" alt="Məktəb Logo">
+    <h1>Gəncə şəhər N.Nərimanov adına 25 nömrəli tam orta məktəb</h1>
 </header>
 
 <nav>
-<a href="#haqqimizda">Haqqımızda</a>
-<a href="#muellimler">Müəllimlər</a>
-<a href="#xeberler">Xəbərlər</a>
-<a href="#qalereya">Qalereya</a>
-<a href="#elaqe">Əlaqə</a>
+    <a href="#about">Haqqımızda</a>
+    <a href="#news">Xəbərlər</a>
+    <a href="#contact">Əlaqə</a>
 </nav>
 
-<section id="haqqimizda">
-<h2>Haqqımızda</h2>
-<div class="card">
-<p>Məktəbimiz yüksək təhsil standartlarına uyğun fəaliyyət göstərir və şagirdlərin hərtərəfli inkişafını təmin edir.</p>
-</div>
+<section id="about">
+    <div class="container">
+        <h2>Haqqımızda</h2>
+        <div class="card">
+            <p>
+                Gəncə şəhər N.Nərimanov adına 25 nömrəli tam orta məktəb 
+                Azərbaycan Respublikasının Gəncə şəhərində fəaliyyət göstərən 
+                ümumi təhsil müəssisəsidir. Məktəb şagirdlərin yüksək keyfiyyətli 
+                təhsil alması və vətənpərvərlik ruhunda yetişməsi üçün fəaliyyət göstərir.
+            </p>
+        </div>
+    </div>
 </section>
 
-<section id="muellimler">
-<h2>Müəllim Heyəti</h2>
-<div class="teachers">
-<div class="teacher">
-<h3>Riyaziyyat müəllimi</h3>
-<p>20 il təcrübə</p>
-</div>
-<div class="teacher">
-<h3>Azərbaycan dili müəllimi</h3>
-<p>15 il təcrübə</p>
-</div>
-<div class="teacher">
-<h3>İngilis dili müəllimi</h3>
-<p>10 il təcrübə</p>
-</div>
-</div>
+<section id="news">
+    <div class="container">
+        <h2>Son Xəbərlər</h2>
+
+        <div class="card">
+            <h3>Elmi-Nəzəri Konfrans keçirildi</h3>
+            <p>
+                23.02.2026-cı il tarixdə "Azərbaycan dili və ədəbiyyatı, eləcə də xarici dil fənləri üzrə fənn aylığı"
+                çərçivəsində məktəbin ingilis dili müəllimi Salmanova Zoyanın təşkilatçılığı ilə
+                Elmi-Nəzəri Konfrans təşkil olundu.
+            </p>
+
+            <iframe 
+                src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/18577wUsap/"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <h3>“Ana dilimiz – qürur mənbəyimiz” ədəbi-bədii tədbir</h3>
+            <p>
+                20.02.2026-cı il tarixində məktəb rəhbərliyinin təşkilatçılığı ilə 
+                "Azərbaycan dili və ədəbiyyatı" fənn aylığı çərçivəsində 
+                "Ana dilimiz - qürur mənbəyimiz" başlığı altında möhtəşəm 
+                ədəbi-bədii tədbir keçirilmişdir.
+                Tədbir Sədayə Ələsgərovanın rəhbərliyi ilə 
+                Nigar Əsədova və Ləman Qarayeva tərəfindən təşkil olunmuşdur.
+            </p>
+
+            <iframe 
+                src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/1H2q7nCwhW/"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
 </section>
 
-<section id="xeberler">
-<h2>Xəbərlər</h2>
-<div class="card">
-<h3>Olimpiada qalibləri</h3>
-<p>Şagirdlərimiz rayon olimpiadasında yüksək nəticə göstərmişdir.</p>
-</div>
-</section>
-
-<section id="qalereya">
-<h2>Qalereya</h2>
-<div class="gallery">
-<img src="https://picsum.photos/400/300?1">
-<img src="https://picsum.photos/400/300?2">
-<img src="https://picsum.photos/400/300?3">
-</div>
-</section>
-
-<section id="elaqe">
-<h2>Əlaqə</h2>
-<form onsubmit="return goster()">
-<input type="text" placeholder="Adınız" required>
-<input type="email" placeholder="Email" required>
-<textarea rows="5" placeholder="Mesajınız"></textarea>
-<button type="submit">Göndər</button>
-</form>
+<section id="contact">
+    <div class="container">
+        <h2>Əlaqə</h2>
+        <div class="card">
+            <p>Ünvan: Gəncə şəhəri</p>
+            <p>Facebook səhifəsi: 
+                <a href="https://www.facebook.com/gence25mekteb" target="_blank">
+                    Gəncə 25 nömrəli məktəb
+                </a>
+            </p>
+        </div>
+    </div>
 </section>
 
 <footer>
-<p>© 2026 25 nömrəli tam orta məktəb | Bütün hüquqlar qorunur</p>
+    © 2026 Gəncə şəhər 25 nömrəli tam orta məktəb | Bütün hüquqlar qorunur
 </footer>
-
-<div class="toggle" onclick="darkMode()">🌙</div>
-
-<script>
-function darkMode(){
-document.body.classList.toggle("dark");
-}
-
-function goster(){
-alert("Mesajınız uğurla göndərildi!");
-return false;
-}
-</script>
 
 </body>
 </html>
