@@ -7,17 +7,17 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
-body{background:#f4f6f9;}
+body{background:#f2f5f9;}
 
 header{
-background:linear-gradient(90deg,#002147,#003366);
+background:#002147; /* logo rənginə yaxın */
 color:white;
 padding:25px;
 text-align:center;
 }
 
 nav{
-background:#990000;
+background:#8B0000; /* tünd qırmızı */
 padding:15px;
 text-align:center;
 }
@@ -31,8 +31,14 @@ font-weight:bold;
 
 nav a:hover{opacity:0.8;}
 
-section{padding:80px 20px;}
-.container{max-width:1100px;margin:auto;}
+section{
+padding:70px 20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
 
 .card{
 background:white;
@@ -40,16 +46,20 @@ padding:30px;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 margin-bottom:40px;
-transition:0.3s;
 }
 
-.card:hover{transform:translateY(-8px);}
+.card img{
+width:100%;
+max-width:500px;
+border-radius:15px;
+margin:20px 0;
+}
 
 .button{
 display:inline-block;
 margin-top:15px;
 padding:10px 20px;
-background:#990000;
+background:#8B0000;
 color:white;
 text-decoration:none;
 border-radius:8px;
@@ -60,6 +70,7 @@ background:#002147;
 color:white;
 text-align:center;
 padding:25px;
+margin-top:40px;
 }
 </style>
 </head>
@@ -73,29 +84,41 @@ padding:25px;
 <nav>
 <a href="index.html">Ana səhifə</a>
 <a href="news.html">Xəbərlər</a>
-<a href="#contact">Əlaqə</a>
+<a href="#elaqe">Əlaqə</a>
 </nav>
 
 <section>
 <div class="container">
+
 <div class="card">
 <h2>Haqqımızda</h2>
 <p>
-Məktəbimiz Gəncə şəhərində fəaliyyət göstərən ümumi təhsil müəssisəsidir.
-Əsas məqsədimiz şagirdlərə keyfiyyətli təhsil vermək və onların
-hərtərəfli inkişafını təmin etməkdir.
+Məktəbimiz şagirdlərin hərtərəfli inkişafı üçün keyfiyyətli təhsil və sağlam mühit təmin edir.
 </p>
 </div>
+
+<div class="card" id="xeberler">
+<h2>🥇 Son Xəbər</h2>
+
+<img src="elcan.jpg">
+
+<p><strong>Quliyev Elcan Rəşad oğlu</strong> kombat Ciu-Citsu üzrə
+yarışlarda I yerə layiq görülmüşdür.</p>
+
+<a class="button" href="news.html">Ətraflı oxu</a>
+
+</div>
+
 </div>
 </section>
 
-<section id="contact">
+<section id="elaqe">
 <div class="container">
 <div class="card">
 <h2>Əlaqə</h2>
 <p>Ünvan: Gəncə şəhəri</p>
-<a class="button" href="https://www.facebook.com/gence25mekteb" target="_blank">
-Rəsmi Facebook səhifəsi
+<a class="button" href="https://www.facebook.com/" target="_blank">
+Rəsmi Facebook səhifəmiz
 </a>
 </div>
 </div>
